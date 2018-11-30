@@ -2,7 +2,7 @@
 	"title": "Module",
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
-	"description": "A Triple Crown Module.",
+	"description": "A Guided Learning Module.",
 	"id": "https://github.com/dotnet/docfx/schemas/module.schema.json",
 	"type": "object",
 	"additionalProperties": false,
@@ -20,6 +20,7 @@
 	],
 	"properties": {
 		"abstract": {
+			"description": "An overview of the tasks the module will ask the user to do.",
 			"tags": [
 				"localizable"
 			],
@@ -27,10 +28,12 @@
 			"contentType": "markdown"
 		},
 		"achievement": {
+			"description": "The reference id for the achievement gained for completing this module.",
 			"type": "string",
 			"contentType": "xref"
 		},
 		"cardDescription": {
+			"description": "The module summary, displayed in the content browser and in other areas where cards are used, like the Learn homepage.",
 			"tags": [
 				"localizable"
 			],
@@ -38,30 +41,32 @@
 			"contentType": "markdown"
 		},
 		"iconUrl": {
+			"description": "The location of the icon image to use - can be a relative path in the docset or an absolute hyperlink.",
 			"type": "string",
 			"contentType": "href"
 		},
 		"levels": {
+			"description": "A collection of levels that apply to this module.",
 			"type": "array",
 			"minItems": 1,
 			"items": {
 				"type": "string",
 				"enum": [
+					"advanced",
 					"beginner",
-					"intermediate",
-					"advanced"
+					"intermediate"
 				]
 			}
 		},
 		"metadata": {
 			"properties": {
-				"title": {
+				"description": {
 					"type": "string",
 					"tags": [
 						"localizable"
 					]
 				},
-				"description": {
+				"title": {
 					"type": "string",
 					"tags": [
 						"localizable"
@@ -71,6 +76,7 @@
 			"type": "object"
 		},
 		"prerequisites": {
+			"description": "A description of the prerequisites for beginning this module.",
 			"tags": [
 				"localizable"
 			],
@@ -78,27 +84,67 @@
 			"contentType": "markdown"
 		},
 		"products": {
-			"type": "array",
-			"minItems": 1,
-			"items": {
-				"type": "string"
-			}
-		},
-		"roles": {
+			"description": "A collection of products that apply to this module.",
 			"type": "array",
 			"minItems": 1,
 			"items": {
 				"type": "string",
 				"enum": [
-					"developer",
+					"azure",
+					"azure-active-directory",
+					"azure-advisor",
+					"azure-application-insights",
+					"azure-cdn",
+					"azure-clis",
+					"azure-cloud-shell",
+					"azure-container-instances",
+					"azure-container-registry",
+					"azure-cosmos-db",
+					"azure-cost-management",
+					"azure-event-grid",
+					"azure-event-hubs",
+					"azure-functions",
+					"azure-iot-central",
+					"azure-key-vault",
+					"azure-log-analytics",
+					"azure-monitor",
+					"azure-portal",
+					"azure-redis-cache",
+					"azure-resource-manager",
+					"azure-sdks",
+					"azure-service-bus",
+					"azure-sql-database",
+					"azure-storage",
+					"azure-virtual-machines",
+					"bizapps",
+					"bizapps-d365",
+					"bizapps-flow",
+					"bizapps-power-apps",
+					"bizapps-power-bi",
+					"vs",
+					"vs-code",
+					"windows"
+				]
+			}
+		},
+		"roles": {
+			"description": "A collection of roles that apply to this module.",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"enum": [
 					"administrator",
-					"solutions-architect",
+					"business-analyst",
 					"business-user",
-					"business-analyst"
+					"developer",
+					"functional-consultant",
+					"solution-architect"
 				]
 			}
 		},
 		"summary": {
+			"description": "The detailed summary of this module, appearing on the module landing page.",
 			"tags": [
 				"localizable"
 			],
@@ -106,16 +152,19 @@
 			"contentType": "markdown"
 		},
 		"title": {
+			"description": "The module title.",
 			"type": "string",
 			"tags": [
 				"localizable"
 			]
 		},
 		"uid": {
+			"description": "The module unique identifier.",
 			"type": "string",
 			"contentType": "uid"
 		},
 		"units": {
+			"description": "A collection of references to module units that make up this module.",
 			"type": "array",
 			"minItems": 1,
 			"items": {
@@ -128,7 +177,6 @@
 	"xrefProperties": [
 		"title",
 		"iconUrl",
-		"summary",
-		"cardDescription"
+		"summary"
 	]
 }

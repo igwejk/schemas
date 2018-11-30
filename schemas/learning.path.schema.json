@@ -2,7 +2,7 @@
 	"title": "LearningPath",
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
-	"description": "A Triple Crown Learning Path.",
+	"description": "A Guided Learning Path.",
 	"id": "https://github.com/dotnet/docfx/schemas/learning.path.schema.json",
 	"type": "object",
 	"additionalProperties": false,
@@ -19,10 +19,12 @@
 	],
 	"properties": {
 		"achievement": {
+			"description": "The achievement reference id.",
 			"type": "string",
 			"contentType": "xref"
 		},
 		"cardDescription": {
+			"description": "The Learning Path summary, displayed in the content browser and in other areas where cards are used, like the Learn homepage.",
 			"tags": [
 				"localizable"
 			],
@@ -30,30 +32,32 @@
 			"contentType": "markdown"
 		},
 		"iconUrl": {
+			"description": "The location of the icon image to use - can be a relative path in the docset or an absolute hyperlink.",
 			"type": "string",
 			"contentType": "href"
 		},
 		"levels": {
+			"description": "A collection of levels that apply to this Learning Path.",
 			"type": "array",
 			"minItems": 1,
 			"items": {
 				"type": "string",
 				"enum": [
+					"advanced",
 					"beginner",
-					"intermediate",
-					"advanced"
+					"intermediate"
 				]
 			}
 		},
 		"metadata": {
 			"properties": {
-				"title": {
+				"description": {
 					"type": "string",
 					"tags": [
 						"localizable"
 					]
 				},
-				"description": {
+				"title": {
 					"type": "string",
 					"tags": [
 						"localizable"
@@ -63,6 +67,7 @@
 			"type": "object"
 		},
 		"modules": {
+			"description": "A collection of module references that are a part of this Learning Path.",
 			"type": "array",
 			"minItems": 1,
 			"items": {
@@ -70,35 +75,76 @@
 				"contentType": "xref"
 			}
 		},
-		"products": {
-			"type": "array",
-			"minItems": 1,
-			"items": {
-				"type": "string"
-			}
-		},
 		"prerequisites": {
+			"description": "A description of the prerequisites for beginning this Learning Path.",
 			"tags": [
 				"localizable"
 			],
 			"type": "string",
 			"contentType": "markdown"
 		},
-		"roles": {
+		"products": {
+			"description": "A collection of products that apply to this Learning Path.",
 			"type": "array",
 			"minItems": 1,
 			"items": {
 				"type": "string",
 				"enum": [
-					"developer",
+					"azure",
+					"azure-active-directory",
+					"azure-advisor",
+					"azure-application-insights",
+					"azure-cdn",
+					"azure-clis",
+					"azure-cloud-shell",
+					"azure-container-instances",
+					"azure-container-registry",
+					"azure-cosmos-db",
+					"azure-cost-management",
+					"azure-event-grid",
+					"azure-event-hubs",
+					"azure-functions",
+					"azure-iot-central",
+					"azure-key-vault",
+					"azure-log-analytics",
+					"azure-monitor",
+					"azure-portal",
+					"azure-redis-cache",
+					"azure-resource-manager",
+					"azure-sdks",
+					"azure-service-bus",
+					"azure-sql-database",
+					"azure-storage",
+					"azure-virtual-machines",
+					"bizapps",
+					"bizapps-d365",
+					"bizapps-flow",
+					"bizapps-power-apps",
+					"bizapps-power-bi",
+					"vs",
+					"vs-code",
+					"windows"
+				]
+			}
+		},
+		"roles": {
+			"description": "A collection of roles that apply to this Learning Path.",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "string",
+				"enum": [
 					"administrator",
-					"solutions-architect",
+					"business-analyst",
 					"business-user",
-					"business-analyst"
+					"developer",
+					"functional-consultant",
+					"solution-architect"
 				]
 			}
 		},
 		"summary": {
+			"description": "The detailed summary of this Learning Path, appearing on the Learning Path landing page.",
 			"tags": [
 				"localizable"
 			],
@@ -106,12 +152,14 @@
 			"contentType": "markdown"
 		},
 		"title": {
+			"description": "The Learning Path title.",
 			"tags": [
 				"localizable"
 			],
 			"type": "string"
 		},
 		"uid": {
+			"description": "The Learning Path unique identifier.",
 			"type": "string",
 			"contentType": "uid"
 		}

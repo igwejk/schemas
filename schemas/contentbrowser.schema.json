@@ -1,0 +1,62 @@
+{
+	"title": "ContentBrowser",
+	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
+	"version": "1.0.0",
+	"description": "A content browser page.",
+	"id": "https://github.com/dotnet/docfx/schemas/contentbrowser.schema.json",
+	"type": "object",
+	"additionalProperties": false,
+	"required": [
+		"summary",
+		"title"
+	],
+	"properties": {
+		"filterText": {
+			"type": "string",
+			"tags": [
+				"localizable"
+			],
+			"description": "The placeholder text for the filter input textbox. Defaults to 'filter' if no value is set."
+		},
+		"metadata": {
+			"properties": {
+				"description": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"title": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				}
+			},
+			"type": "object"
+		},
+		"refineHeadingText": {
+			"type": "string",
+			"tags": [
+				"localizable"
+			],
+			"description": "The text for the Level 2 Heading for the content browser facet list. Defaults to 'Refine Learning Content' if no value is set."
+		},
+		"summary": {
+			"type": "string",
+			"contentType": "markdown",
+			"tags": [
+				"localizable"
+			],
+			"description": "The summary text for the content browser, appearing underneath the Level 1 Heading."
+		},
+		"title": {
+			"type": "string",
+			"tags": [
+				"localizable"
+			],
+			"description": "The text for the Level 1 Heading for the content browser."
+		}
+	},
+	"metadata": "/metadata"
+}

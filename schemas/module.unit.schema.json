@@ -2,7 +2,7 @@
 	"title": "ModuleUnit",
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
-	"description": "A Triple Crown Module Unit.",
+	"description": "A Guided Learning Module Unit.",
 	"id": "https://github.com/dotnet/docfx/schemas/module.unit.schema.json",
 	"type": "object",
 	"additionalProperties": false,
@@ -22,6 +22,9 @@
 		"durationInMinutes": {
 			"type": "number"
 		},
+		"azureSandbox": {
+			"type": "boolean"
+		},
 		"interactive": {
 			"description": "Enum string describing the type of interactive content.",
 			"type": "string",
@@ -33,18 +36,21 @@
 				"powershell-editor"
 			]
 		},
-		"labOnDemandUrl": {
-			"type": "string"
+		"labId": {
+			"type": "integer"
+		},
+		"labModal": {
+			"type": "boolean"
 		},
 		"metadata": {
 			"properties": {
-				"title": {
+				"description": {
 					"type": "string",
 					"tags": [
 						"localizable"
 					]
 				},
-				"description": {
+				"title": {
 					"type": "string",
 					"tags": [
 						"localizable"
@@ -187,28 +193,16 @@
 						]
 					},
 					"azure": {
+						"title": "Azure tasks for validation",
 						"type": "object",
-						"additionalProperties": false,
+						"additionalProperties": true,
 						"properties": {
-							"resourceGroup": {
-								"type": "string"
-							},
-							"properties": {
-								"type": "object"
-							},
-							"location": {
-								"type": "string"
-							},
-							"tags": {
-								"type": "object"
-							},
 							"resource": {
-								"title": "Azure resource for validation",
+								"title": "Azure resource for validation (ARM)",
 								"type": "object",
-								"description": "azure resource sechema is according to the schema defined in https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-templates-resources",
+								"description": "azure resource schema is according to the schema defined in https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-templates-resources",
 								"required": [
-									"type",
-									"name"
+									"type"
 								],
 								"properties": {
 									"type": {

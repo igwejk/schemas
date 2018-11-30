@@ -11,6 +11,7 @@
 	"additionalProperties": false,
 	"properties": {
 		"groups": {
+			"description": "The collection of zone pivot groups available for this docset.",
 			"type": "array",
 			"items": {
 				"required": [
@@ -22,15 +23,18 @@
 				"additionalProperties": false,
 				"properties": {
 					"id": {
+						"description": "The unique identifier for the pivot group. Referenced in content by the zone_pivot_groups metadata field.",
 						"type": "string"
 					},
 					"title": {
+						"description": "The pivot group title.",
 						"type": "string",
 						"tags": [
 							"localizable"
 						]
 					},
 					"prompt": {
+						"description": "The pivot group call to action/prompt.",
 						"type": "string",
 						"tags": [
 							"localizable"
@@ -48,9 +52,11 @@
 							"additionalProperties": false,
 							"properties": {
 								"id": {
+									"description": "The unique identifier for the pivot. Referenced in content using the ::: zone pivot='{id}' ::: markdown extension.",
 									"type": "string"
 								},
 								"title": {
+									"description": "The pivot title. Should be short, because this value appears in the pivot buttons.",
 									"type": "string",
 									"tags": [
 										"localizable"
@@ -61,6 +67,11 @@
 					}
 				}
 			}
+		},
+		"metadata": {
+			"properties": {},
+			"type": "object"
 		}
-	}
+	},
+	"metadata": "/metadata"
 }

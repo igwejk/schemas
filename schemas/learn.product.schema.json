@@ -1,0 +1,620 @@
+{
+	"title": "LearnProduct",
+	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
+	"version": "1.0.0",
+	"description": "A learn product page.",
+	"id": "https://github.com/dotnet/docfx/schemas/learn.product.schema.json",
+	"type": "object",
+	"additionalProperties": false,
+	"required": [
+		"summary",
+		"title",
+		"hero",
+		"brand"
+	],
+	"properties": {
+		"metadata": {
+			"properties": {
+				"description": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"title": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				}
+			},
+			"type": "object"
+		},
+		"brand": {
+			"type": "string",
+			"additionalProperties": false,
+			"enum": [
+				"azure",
+				"bizapps"
+			]
+		},
+		"browseAllSection": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": [
+				"link",
+				"title"
+			],
+			"properties": {
+				"title": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"link": {
+					"type": "object",
+					"additionalProperties": false,
+					"required": [
+						"url",
+						"text"
+					],
+					"properties": {
+						"url": {
+							"type": "string"
+						},
+						"text": {
+							"type": "string",
+							"tags": [
+								"localizable"
+							]
+						}
+					}
+				}
+			}
+		},
+		"isHome": {
+			"type":"boolean"
+		},
+		"summary": {
+			"type": "string",
+			"contentType": "markdown",
+			"tags": [
+				"localizable"
+			]
+		},
+		"title": {
+			"type": "string",
+			"tags": [
+				"localizable"
+			]
+		},
+		"hero": {
+			"additionalProperties": false,
+			"required": [
+				"summary"
+			],
+			"properties": {
+				"backgroundColor": {
+					"type": "string"
+				},
+				"backgroundSrc": {
+					"type": "string"
+				},
+				"comingSoon": {
+					"type": "string",
+					"contentType": "markdown",
+					"tags": [
+						"localizable"
+					]
+				},
+				"supertitle": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"subtitle": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"summary": {
+					"type": "string",
+					"contentType": "markdown",
+					"tags": [
+						"localizable"
+					]
+				},
+				"card": {
+					"additionalProperties": false,
+					"required": [
+						"title",
+						"timeToComplete",
+						"subtype",
+						"numberOfSubtype",
+						"summary",
+						"link",
+						"image"
+					],
+					"properties": {
+						"title": {
+							"type": "string",
+							"tags": [
+								"localizable"
+							]
+						},
+						"timeToComplete": {
+							"type": "string",
+							"tags": [
+								"localizable"
+							]
+						},
+						"hours": {
+							"type": "number"
+						},
+						"minutes": {
+							"type": "number"
+						},
+						"numberOfSubtype": {
+							"type": "number"
+						},
+						"subtype": {
+							"type": "string",
+							"enum": [
+								"modules",
+								"units"
+							]
+						},
+						"summary": {
+							"type": "string",
+							"tags": [
+								"localizable"
+							]
+						},
+						"image": {
+							"type": "object",
+							"additionalProperties": false,
+							"required": [
+								"src",
+								"alt"
+							],
+							"properties": {
+								"src": {
+									"type": "string"
+								},
+								"alt": {
+									"type": "string",
+									"tags": [
+										"localizable"
+									]
+								}
+							}
+						},
+						"link": {
+							"type": "object",
+							"additionalProperties": false,
+							"required": [
+								"url",
+								"text"
+							],
+							"properties": {
+								"url": {
+									"type": "string"
+								},
+								"text": {
+									"type": "string",
+									"tags": [
+										"localizable"
+									]
+								}
+							}
+						}
+					},
+					"type": "object"
+				}
+			},
+			"type": "object"
+		},
+		"tabs": {
+			"type": "array",
+			"minItems": 2,
+			"maxItems": 3,
+			"items": {
+				"additionalProperties": false,
+				"required": [
+					"tabId",
+					"title",
+					"summary",
+					"tagText",
+					"image"
+				],
+				"properties": {
+					"tabId": {
+						"type": "string"
+					},
+					"title": {
+						"type": "string",
+						"tags": [
+							"localizable"
+						]
+					},
+					"summary": {
+						"type": "string",
+						"contentType": "markdown",
+						"tags": [
+							"localizable"
+						]
+					},
+					"tagText": {
+						"type": "string",
+						"tags": [
+							"localizable"
+						]
+					},
+					"image": {
+						"type": "object",
+						"additionalProperties": false,
+						"required": [
+							"alt",
+							"src"
+						],
+						"properties": {
+							"alt": {
+								"type": "string",
+								"tags": [
+									"localizable"
+								]
+							},
+							"src": {
+								"type": "string"
+							}
+						}
+					},
+					"action": {
+						"type": "object",
+						"properties": {
+							"inputType": {
+								"type": "string",
+								"enum": [
+									"select",
+									"link"
+								]
+							},
+							"link": {
+								"type": "object",
+								"properties": {
+									"text": {
+										"type": "string",
+										"tags": [
+											"localizable"
+										]
+									},
+									"href": {
+										"type": "string"
+									}
+								}
+							},
+							"select": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"text": {
+											"type": "string",
+											"tags": [
+												"localizable"
+											]
+										},
+										"href": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"showcase": {
+			"type": "array",
+			"items": {
+				"properties": {
+					"browseAllPathsLink": {
+						"additionalProperties": false,
+						"required": [
+							"url",
+							"text"
+						],
+						"type": "object",
+						"properties": {
+							"url": {
+								"type": "string"
+							},
+							"text": {
+								"type": "string",
+								"tags": [
+									"localizable"
+								]
+							}
+						}
+					},
+					"browseAllModulesLink": {
+						"additionalProperties": false,
+						"required": [
+							"url",
+							"text"
+						],
+						"type": "object",
+						"properties": {
+							"url": {
+								"type": "string"
+							},
+							"text": {
+								"type": "string",
+								"tags": [
+									"localizable"
+								]
+							}
+						}
+					},
+					"title": {
+						"type": "string",
+						"tags": [
+							"localizable"
+						]
+					},
+					"summary": {
+						"type": "string",
+						"tags": [
+							"localizable"
+						]
+					},
+					"paths": {
+						"minItems": 1,
+						"maxItems": 6,
+						"type": "array",
+						"items": {
+							"$ref": "#/definitions/path"
+						}
+					},
+					"modules": {
+						"minItems": 1,
+						"maxItems": 6,
+						"type": "array",
+						"items": {
+							"$ref": "#/definitions/module"
+						}
+					},
+					"moreInformation": {
+						"type": "object",
+						"properties": {
+							"brand": {
+								"type": "string",
+								"enum": [
+									"azure",
+									"bizapps"
+								]
+							},
+							"title": {
+								"type": "string",
+								"tags": [
+									"localizable"
+								]
+							},
+							"summary": {
+								"type": "string",
+								"tags": [
+									"localizable"
+								]
+							},
+							"links": {
+								"maxItems": 3,
+								"type": "array",
+								"properties": {
+									"text": {
+										"type": "string",
+										"tags": [
+											"localizable"
+										]
+									},
+									"href": {
+										"type": "string"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"additionalLearning": {
+			"type": "object",
+			"properties": {
+				"title": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"summary": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"items": {
+					"maxItems": 4,
+					"type": "array",
+					"properties": {
+						"title": {
+							"type": "string",
+							"tags": [
+								"localizable"
+							]
+						},
+						"summary": {
+							"type": "string",
+							"tags": [
+								"localizable"
+							]
+						},
+						"iconUrl": {
+							"type": "string"
+						},
+						"link": {
+							"type": "object",
+							"properties": {
+								"url": {
+									"type": "string"
+								},
+								"text": {
+									"type": "string",
+									"tags": [
+										"localizable"
+									]
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"path": {
+			"type": "object",
+			"properties": {
+				"title": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"summary": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"uid": {
+					"type": "string",
+					"contentType": "uid"
+				},
+				"image": {
+					"type": "object",
+					"additionalProperties": false,
+					"required": [
+						"alt",
+						"src"
+					],
+					"properties": {
+						"alt": {
+							"type": "string",
+							"tags": [
+								"localizable"
+							]
+						},
+						"src": {
+							"type": "string"
+						}
+					}
+				},
+				"url": {
+					"type": "string"
+				},
+				"level": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"role": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"product": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"hours": {
+					"type": "number"
+				},
+				"minutes": {
+					"type": "number"
+				},
+				"numberOfModules": {
+					"type": "number"
+				}
+			}
+		},
+		"module": {
+			"type": "object",
+			"properties": {
+				"title": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"summary": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"uid": {
+					"type": "string",
+					"contentType": "uid"
+				},
+				"image": {
+					"type": "object",
+					"required": [
+						"alt",
+						"src"
+					],
+					"additionalProperties": false,
+					"properties": {
+						"alt": {
+							"type": "string",
+							"tags": [
+								"localizable"
+							]
+						},
+						"src": {
+							"type": "string"
+						}
+					}
+				},
+				"numberOfUnits": {
+					"type": "number"
+				},
+				"level": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"role": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"product": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				}
+			}
+		}
+	},
+	"metadata": "/metadata"
+}

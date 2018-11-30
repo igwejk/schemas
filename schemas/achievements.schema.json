@@ -2,7 +2,7 @@
 	"title": "Achievements",
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
-	"description": "Triple Crown Achievement definition.",
+	"description": "Guided Learning Achievements definition.",
 	"id": "https://github.com/dotnet/docfx/schemas/achievements.schema.json",
 	"type": "object",
 	"additionalProperties": false,
@@ -15,55 +15,59 @@
 			"items": {
 				"type": "object",
 				"required": [
-					"uid",
-					"type",
-					"title",
+					"iconUrl",
 					"summary",
-					"iconUrl"
+					"title",
+					"type",
+					"uid"
 				],
 				"additionalProperties": false,
 				"properties": {
-					"uid": {
-						"type": "string",
-						"contentType": "uid"
-					},
-					"type": {
-						"type": "string",
-						"enum": [
-							"trophy",
-							"badge"
-						]
-					},
-					"title": {
+					"description": {
 						"tags": [
 							"localizable"
 						],
-						"type": "string"
+						"type": "string",
+						"contentType": "markdown",
+						"description": "The long description for the achievement."
+					},
+					"iconUrl": {
+						"type": "string",
+						"contentType": "href",
+						"description": "The location of the icon image to use - can be a relative path in the docset or an absolute hyperlink."
 					},
 					"summary": {
 						"tags": [
 							"localizable"
 						],
 						"type": "string",
-						"contentType": "markdown"
+						"contentType": "markdown",
+						"description": "The one-line summary of the achievement."
 					},
-					"description": {
+					"title": {
 						"tags": [
 							"localizable"
 						],
 						"type": "string",
-						"contentType": "markdown"
+						"description": "The achievement title."
 					},
-					"iconUrl": {
+					"type": {
 						"type": "string",
-						"contentType": "href"
+						"enum": [
+							"trophy",
+							"badge"
+						],
+						"description": "The achievement type."
+					},
+					"uid": {
+						"type": "string",
+						"contentType": "uid",
+						"description": "The achievement unique identifier."
 					}
 				}
 			}
 		},
 		"metadata": {
-			"properties": {
-			},
 			"type": "object"
 		}
 	},

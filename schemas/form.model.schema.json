@@ -2,12 +2,13 @@
 	"title": "FormModel",
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
-	"description": "A model for creating dynamic forms.",
+	"description": "A model for creating dynamic forms in chromeless mode.",
 	"id": "https://github.com/dotnet/docfx/schemas/form.model.schema.json",
 	"type": "object",
 	"additionalProperties": false,
 	"properties": {
 		"inputs": {
+			"description": "A collection of form inputs to display as part of this chromeless form, in display order.",
 			"items": {
 				"additionalProperties": false,
 				"required": [
@@ -24,25 +25,30 @@
 							"text",
 							"number",
 							"checkbox"
-						]
+						],
+						"description": "The type of HTML form input to create."
 					},
 					"name": {
-						"type": "string"
+						"type": "string",
+						"description": "The form input identifier, used to identify the value when the chromeless form is submitted."
 					},
 					"isRequired": {
-						"type": "boolean"
+						"type": "boolean",
+						"description": "Whether or not this individual form input is required or optional for form submission."
 					},
 					"label": {
 						"type": "string",
 						"tags": [
 							"localizable"
-						]
+						],
+						"description": "The text label that will be displayed for this form input."
 					},
 					"description": {
 						"type": "string",
 						"tags": [
 							"localizable"
-						]
+						],
+						"description": "A longer description of the form input for extra information or for accessibility."
 					}
 				},
 				"type": "object"
