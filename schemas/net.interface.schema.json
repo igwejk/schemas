@@ -3,7 +3,7 @@
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
 	"description": "The schema for NetInterface page",
-	"id": "https://github.com/dotnet/docfx/schemas/net.interface.schema.json",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/net.interface.schema.json",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [

@@ -3,7 +3,7 @@
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
 	"description": "The schema for REST Component page",
-	"id": "https://github.com/dotnet/docfx/schemas/rest.componentV3.schema.json",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/rest.componentV3.schema.json",
 	"type": "object",
 	"additionalProperties": false,
 	"properties": {

@@ -3,7 +3,7 @@
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
 	"description": "The schema for QSharpType page",
-	"id": "https://github.com/dotnet/docfx/schemas/qsharp.type.schema.json",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/qsharp.type.schema.json",
 	"type": "object",
 	"properties": {
 		"examples": {

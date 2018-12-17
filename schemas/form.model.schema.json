@@ -3,7 +3,7 @@
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
 	"description": "A model for creating dynamic forms in chromeless mode.",
-	"id": "https://github.com/dotnet/docfx/schemas/form.model.schema.json",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/form.model.schema.json",
 	"type": "object",
 	"additionalProperties": false,
 	"properties": {

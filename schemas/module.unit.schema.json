@@ -3,7 +3,7 @@
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
 	"description": "A Guided Learning Module Unit.",
-	"id": "https://github.com/dotnet/docfx/schemas/module.unit.schema.json",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/module.unit.schema.json",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
@@ -129,6 +129,13 @@
 											]
 										},
 										"incorrectExplanation": {
+											"type": "string",
+											"contentType": "markdown",
+											"tags": [
+												"localizable"
+											]
+										},
+										"explanation": {
 											"type": "string",
 											"contentType": "markdown",
 											"tags": [

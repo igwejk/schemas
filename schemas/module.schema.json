@@ -3,20 +3,19 @@
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
 	"description": "A Guided Learning Module.",
-	"id": "https://github.com/dotnet/docfx/schemas/module.schema.json",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/module.schema.json",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
+		"units",
 		"abstract",
-		"achievement",
 		"iconUrl",
 		"levels",
 		"products",
 		"roles",
 		"summary",
 		"title",
-		"uid",
-		"units"
+		"uid"
 	],
 	"properties": {
 		"abstract": {
@@ -32,6 +31,18 @@
 			"type": "string",
 			"contentType": "xref"
 		},
+		"badge": {
+			"required": [
+				"uid"
+			],
+			"properties": {
+				"uid": {
+					"type": "string",
+					"contentType": "uid"
+				}
+			},
+			"type": "object"
+		},
 		"cardDescription": {
 			"description": "The module summary, displayed in the content browser and in other areas where cards are used, like the Learn homepage.",
 			"tags": [
@@ -44,6 +55,9 @@
 			"description": "The location of the icon image to use - can be a relative path in the docset or an absolute hyperlink.",
 			"type": "string",
 			"contentType": "href"
+		},
+		"isRatingEnabled": {
+			"type": "string"
 		},
 		"levels": {
 			"description": "A collection of levels that apply to this module.",
@@ -121,6 +135,28 @@
 					"bizapps-flow",
 					"bizapps-power-apps",
 					"bizapps-power-bi",
+					"common-data-service",
+					"dynamics",
+					"dynamics-ai-customer-service",
+					"dynamics-ai-market-insights",
+					"dynamics-ai-sales",
+					"dynamics-business-central",
+					"dynamics-customer-engagement",
+					"dynamics-customer-service",
+					"dynamics-field-service",
+					"dynamics-finance-operations",
+					"dynamics-layout",
+					"dynamics-marketing`",
+					"dynamics-operations",
+					"dynamics-project-service",
+					"dynamics-remote-assist",
+					"dynamics-retail",
+					"dynamics-sales",
+					"dynamics-talent",
+					"flow",
+					"power-bi",
+					"power-platform",
+					"powerapps",
 					"vs",
 					"vs-code",
 					"windows"

@@ -3,7 +3,7 @@
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
 	"description": "A learn product page.",
-	"id": "https://github.com/dotnet/docfx/schemas/learn.product.schema.json",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/learn.product.schema.json",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
@@ -74,7 +74,7 @@
 			}
 		},
 		"isHome": {
-			"type":"boolean"
+			"type": "boolean"
 		},
 		"summary": {
 			"type": "string",

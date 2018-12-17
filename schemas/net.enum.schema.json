@@ -3,7 +3,7 @@
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
 	"description": "The schema for NetEnum page",
-	"id": "https://github.com/dotnet/docfx/schemas/net.enum.schema.json",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/net.enum.schema.json",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
@@ -16,12 +16,14 @@
 			"type": "object"
 		},
 		"assemblies": {
+			"description": "A collection of assemblies that contain this enum.",
 			"items": {
 				"type": "string"
 			},
 			"type": "array"
 		},
 		"attributes": {
+			"description": "A collection of references to Attributes applied to this enum.",
 			"items": {
 				"type": "string",
 				"contentType": "xref"
@@ -29,6 +31,7 @@
 			"type": "array"
 		},
 		"description": {
+			"description": "A detailed description of the enum, used for supplementary information or detailed usage.",
 			"type": "string",
 			"contentType": "markdown",
 			"tags": [
@@ -36,6 +39,7 @@
 			]
 		},
 		"examples": {
+			"description": "Detailed examples for usage of the enum.",
 			"type": "string",
 			"contentType": "markdown",
 			"tags": [
@@ -43,15 +47,20 @@
 			]
 		},
 		"fields": {
+			"description": "A collection of fields that the enum defines.",
 			"items": {
+				"additionalProperties": false,
 				"properties": {
 					"name": {
+						"description": "The field name.",
 						"type": "string"
 					},
 					"literalValue": {
+						"description": "The field value.",
 						"type": "number"
 					},
 					"summary": {
+						"description": "The short summary for the field.",
 						"type": "string",
 						"contentType": "markdown",
 						"tags": [
@@ -64,6 +73,7 @@
 			"type": "array"
 		},
 		"flagsAttributeText": {
+			"description": "Unused property.",
 			"type": "string",
 			"contentType": "markdown",
 			"tags": [
@@ -71,6 +81,7 @@
 			]
 		},
 		"inheritances": {
+			"description": "A collection of references to objects (classes, interfaces, etc) that this enum inherits.",
 			"items": {
 				"type": "string",
 				"contentType": "xref"
@@ -78,16 +89,20 @@
 			"type": "array"
 		},
 		"isDeprecated": {
+			"description": "Whether or not this enum is deprecated.",
 			"type": "boolean"
 		},
 		"name": {
+			"description": "The name of the enum.",
 			"type": "string"
 		},
 		"namespace": {
+			"description": "A reference to the namespace owning this enum.",
 			"type": "string",
 			"contentType": "xref"
 		},
 		"seeAlso": {
+			"description": "A collection of references to related documents.",
 			"items": {
 				"type": "string",
 				"contentType": "xref"
@@ -95,6 +110,7 @@
 			"type": "array"
 		},
 		"summary": {
+			"description": "The main summary for the enum.",
 			"type": "string",
 			"contentType": "markdown",
 			"tags": [
@@ -102,9 +118,11 @@
 			]
 		},
 		"syntax": {
+			"description": "Example code syntax for the enum, displayed in a code block in the document.",
 			"type": "string"
 		},
 		"threadSafety": {
+			"description": "The descriptive thread safety information for the enum. Overrides threadSafetyInfo display.",
 			"type": "string",
 			"contentType": "markdown",
 			"tags": [
@@ -112,17 +130,22 @@
 			]
 		},
 		"threadSafetyInfo": {
+			"description": "Thread safety information for the enum. Unused if threadSafety has a value.",
+			"additionalProperties": false,
 			"properties": {
 				"isSupported": {
+					"description": "Whether or not the enum supports thread safety.",
 					"type": "boolean"
 				},
 				"memberScope": {
+					"description": "The scope of the thread safety. If unset, scope defaults to all.",
 					"type": "string"
 				}
 			},
 			"type": "object"
 		},
 		"uid": {
+			"description": "The enum unique identifier.",
 			"contentType": "uid",
 			"type": "string"
 		}

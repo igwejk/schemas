@@ -1,7 +1,7 @@
 {
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
-	"id": "https://github.com/dotnet/docfx/test/schemas/contextobject.test.schema.json",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/ContextObject.schema.json",
 	"title": "ContextObject",
 	"description": "The schema for context object",
 	"type": "object",

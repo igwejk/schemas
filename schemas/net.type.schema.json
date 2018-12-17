@@ -3,7 +3,7 @@
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
 	"description": "The schema for NetType page for class and struct",
-	"id": "https://github.com/dotnet/docfx/schemas/net.type.schema.json",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/net.type.schema.json",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [

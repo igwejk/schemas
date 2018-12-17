@@ -1,14 +1,21 @@
 {
-    "title": "Hub",
-    "$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
+	"title": "Hub",
+	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
 	"description": "The schema for Hub",
-    "id": "https://github.com/dotnet/docfx/test/schemas/Hub.schema.json",
-    "type": "object",
-    "properties": {
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/Hub.schema.json",
+	"type": "object",
+	"additionalProperties": false,
+	"required": [
+		"title"
+	],
+	"properties": {
 		"abstract": {
+			"description": "The main page abstract section.",
+			"additionalProperties": false,
 			"properties": {
 				"description": {
+					"description": "The main description for the abstract.",
 					"type": "string",
 					"contentType": "markdown",
 					"tags": [
@@ -16,48 +23,84 @@
 					]
 				},
 				"aside": {
+					"description": "The optional aside element. Only shown if the 'menu' property is empty.",
+					"additionalProperties": false,
 					"properties": {
 						"image": {
+							"description": "The image to use in the aside.",
+							"additionalProperties": false,
+							"required": [
+								"src",
+								"alt",
+								"height",
+								"width"
+							],
 							"properties": {
 								"alt": {
+									"description": "The alt text for the image, required for accessibility.",
 									"type": "string"
 								},
 								"height": {
+									"description": "The height of the image in pixels.",
 									"type": "number"
 								},
 								"src": {
+									"description": "The relative or absolute path to the image file.",
 									"type": "string"
 								},
 								"width": {
+									"description": "The width of the image in pixels.",
 									"type": "number"
 								}
 							},
 							"type": "object"
 						},
 						"title": {
+							"description": "The aside title.",
 							"type": "string",
 							"tags": [
 								"localizable"
 							]
 						},
 						"href": {
-							"type": "string"
+							"description": "The link target for the aside title.",
+							"type": "string",
+							"contentType": "href"
 						},
 						"width": {
+							"description": "The maximum width of the aside.",
 							"type": "number"
 						}
 					},
 					"type": "object"
 				},
 				"menu": {
+					"description": "The menu in the abstract section.",
+					"additionalProperties": false,
 					"properties": {
+						"title": {
+							"description": "The menu title.",
+							"type": "string",
+							"tags": [
+								"localizable"
+							]
+						},
 						"items": {
+							"description": "The collection of menu items, in display order.",
 							"items": {
+								"additionalProperties": false,
+								"required": [
+									"href",
+									"text"
+								],
 								"properties": {
 									"href": {
-										"type": "string"
+										"description": "The link target for the menu item.",
+										"type": "string",
+										"contentType": "href"
 									},
 									"text": {
+										"description": "The display text for the menu item.",
 										"type": "string",
 										"tags": [
 											"localizable"
@@ -67,7 +110,7 @@
 								"type": "object"
 							},
 							"type": "array"
-						}	
+						}
 					},
 					"type": "object"
 				}
@@ -76,6 +119,12 @@
 		},
 		"metadata": {
 			"properties": {
+				"description": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
 				"title": {
 					"type": "string",
 					"tags": [
@@ -86,36 +135,75 @@
 			"type": "object"
 		},
 		"sections": {
+			"description": "A collection of page sections to display.",
 			"items": {
 				"properties": {
 					"title": {
+						"description": "The section Level 2 Heading text.",
 						"type": "string",
 						"tags": [
 							"localizable"
 						]
 					},
 					"items": {
+						"description": "The items to display within the section, along with their display type.",
 						"items": {
+							"required": [
+								"type"
+							],
 							"properties": {
 								"type": {
-									"type": "string"
+									"description": "The content type of the section item.",
+									"type": "string",
+									"enum": [
+										"list",
+										"table",
+										"markdown"
+									]
 								},
 								"style": {
-									"type": "string"
+									"description": "The list display type to use. Only used when 'type' parameter is 'list' or 'table'.",
+									"type": "string",
+									"enum": [
+										"ordered",
+										"unordered",
+										"cards",
+										"icon48",
+										"icon64",
+										"dataMatrix"
+									]
 								},
 								"className": {
+									"description": "A CSS classname to apply to list content. Only used when 'type' parameter is 'list'.",
 									"type": "string"
 								},
 								"columns": {
+									"description": "The number of columns to use for list content. Only used if 'type' parameter is 'list', 'style' parameter is 'cards', and 'className' parameter is 'cardsM'.",
 									"type": "number"
 								},
 								"tableColumns": {
+									"description": "A collection of items to use as the heading row for the table. Only used when 'type' parameter is 'table'.",
 									"items": {
+										"additionalProperties": false,
 										"properties": {
 											"image": {
+												"description": "The image to use in the table header cell.",
+												"additionalProperties": false,
+												"required": [
+													"src"
+												],
 												"properties": {
-													"src": {
+													"alt": {
+														"description": "The alt text for the image. Will display as header text if used. If unused, alt text will be the column index.",
 														"type": "string"
+													},
+													"src": {
+														"description": "The relative or absolute path to the image file.",
+														"type": "string"
+													},
+													"width": {
+														"description": "The width of the image in pixels.",
+														"type": "number"
 													}
 												},
 												"type": "object"
@@ -126,19 +214,29 @@
 									"type": "array"
 								},
 								"tableRows": {
+									"description": "The rows for the table. Only used when 'type' parameter is 'table'.",
 									"items": {
+										"additionalProperties": false,
 										"properties": {
 											"title": {
+												"description": "The display title that identifies the table row.",
 												"type": "string",
 												"tags": [
 													"localizable"
 												]
 											},
 											"values": {
+												"description": "A collection of values to display in the table row, in display order.",
 												"items": {
+													"additionalProperties": false,
+													"required": [
+														"href"
+													],
 													"properties": {
 														"href": {
-															"type": "string"
+															"description": "The link target for the table cell.",
+															"type": "string",
+															"contentType": "href"
 														}
 													},
 													"type": "object"
@@ -150,13 +248,8 @@
 									},
 									"type": "array"
 								},
-								"text": {
-									"type": "string",
-									"tags": [
-										"localizable"
-									]
-								},
 								"content": {
+									"description": "The raw content of the section item. Only used if 'type' parameter is 'markdown'.",
 									"type": "string",
 									"contentType": "markdown",
 									"tags": [
@@ -164,15 +257,19 @@
 									]
 								},
 								"items": {
+									"description": "A collection of list items, in display order.",
 									"items": {
+										"additionalProperties": false,
 										"properties": {
 											"title": {
+												"description": "The list item Level 3 Heading title. Not used when 'style' parameter is 'ordered' or 'unordered'.",
 												"type": "string",
 												"tags": [
 													"localizable"
 												]
 											},
 											"content": {
+												"description": "The list item content. Not used when 'style' parameter is 'icon48' or 'icon64'.",
 												"type": "string",
 												"contentType": "markdown",
 												"tags": [
@@ -180,21 +277,29 @@
 												]
 											},
 											"text": {
+												"description": "The list item text.",
 												"type": "string",
 												"tags": [
 													"localizable"
 												]
 											},
 											"href": {
-												"type": "string"
+												"description": "The list item text. Only used if list item 'content' is empty.",
+												"type": "string",
+												"contentType": "href"
 											},
 											"image": {
+												"description": "The image to use in the list item. Only used when 'style' parameter is 'card', 'icon48', or 'icon64'.",
+												"additionalProperties": false,
 												"properties": {
 													"src": {
+														"description": "The relative or absolute path to the image file.",
 														"type": "string"
 													},
 													"href": {
-														"type": "string"
+														"description": "The link target for the list item.",
+														"type": "string",
+														"contentType": "href"
 													}
 												},
 												"type": "object"
@@ -215,6 +320,7 @@
 			"type": "array"
 		},
 		"title": {
+			"description": "The Level 1 Heading text.",
 			"type": "string",
 			"tags": [
 				"localizable"

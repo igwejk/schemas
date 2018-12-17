@@ -3,11 +3,10 @@
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
 	"description": "A Guided Learning Path.",
-	"id": "https://github.com/dotnet/docfx/schemas/learning.path.schema.json",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/learning.path.schema.json",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
-		"achievement",
 		"iconUrl",
 		"levels",
 		"modules",
@@ -121,6 +120,28 @@
 					"bizapps-flow",
 					"bizapps-power-apps",
 					"bizapps-power-bi",
+					"common-data-service",
+					"dynamics",
+					"dynamics-ai-customer-service",
+					"dynamics-ai-market-insights",
+					"dynamics-ai-sales",
+					"dynamics-business-central",
+					"dynamics-customer-engagement",
+					"dynamics-customer-service",
+					"dynamics-field-service",
+					"dynamics-finance-operations",
+					"dynamics-layout",
+					"dynamics-marketing`",
+					"dynamics-operations",
+					"dynamics-project-service",
+					"dynamics-remote-assist",
+					"dynamics-retail",
+					"dynamics-sales",
+					"dynamics-talent",
+					"flow",
+					"power-bi",
+					"power-platform",
+					"powerapps",
 					"vs",
 					"vs-code",
 					"windows"
@@ -157,6 +178,18 @@
 				"localizable"
 			],
 			"type": "string"
+		},
+		"trophy": {
+			"required": [
+				"uid"
+			],
+			"properties": {
+				"uid": {
+					"type": "string",
+					"contentType": "uid"
+				}
+			},
+			"type": "object"
 		},
 		"uid": {
 			"description": "The Learning Path unique identifier.",

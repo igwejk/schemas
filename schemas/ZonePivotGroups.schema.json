@@ -3,7 +3,7 @@
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
 	"description": "Zone pivot group definitions schema",
-	"id": "https://github.com/dotnet/docfx/test/schemas/ZonePivotGroups.schema.json",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/ZonePivotGroups.schema.json",
 	"type": "object",
 	"required": [
 		"groups"

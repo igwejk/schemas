@@ -3,7 +3,7 @@
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
 	"description": "The schema for NetDelegate page",
-	"id": "https://github.com/dotnet/docfx/schemas/net.delegate.schema.json",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/net.delegate.schema.json",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
@@ -16,16 +16,19 @@
 			"type": "object"
 		},
 		"altCompliant": {
+			"description": "A reference to an alternative delegate that is compliant with the Common Language Specification (CLS). Only necessary if this delegate is not CLS compliant..",
 			"type": "string",
 			"contentType": "xref"
 		},
 		"assemblies": {
+			"description": "A collection of assemblies in which this delegate function resides.",
 			"items": {
 				"type": "string"
 			},
 			"type": "array"
 		},
 		"description": {
+			"description": "A detailed description of the delegate, used for supplementary information or detailed usage.",
 			"type": "string",
 			"contentType": "markdown",
 			"tags": [
@@ -33,6 +36,7 @@
 			]
 		},
 		"examples": {
+			"description": "Detailed examples for usage of the delegate..",
 			"type": "string",
 			"contentType": "markdown",
 			"tags": [
@@ -40,6 +44,7 @@
 			]
 		},
 		"inheritances": {
+			"description": "A collection of references to objects (classes, interfaces, etc) that this delegate inherits.",
 			"items": {
 				"type": "string",
 				"contentType": "xref"
@@ -47,19 +52,24 @@
 			"type": "array"
 		},
 		"isDeprecated": {
+			"description": "Whether or not this delegate is deprecated.",
 			"type": "boolean"
 		},
 		"name": {
+			"description": "The name of the delegate.",
 			"type": "string"
 		},
 		"namespace": {
+			"description": "A reference to the namespace owning this delegate.",
 			"type": "string",
 			"contentType": "xref"
 		},
 		"isNotClsCompliant": {
+			"description": "Whether or not the delegate is compliant with the Common Language Specification.",
 			"type": "boolean"
 		},
 		"seeAlso": {
+			"description": "A collection of references to related documents.",
 			"items": {
 				"type": "string",
 				"contentType": "xref"
@@ -67,6 +77,7 @@
 			"type": "array"
 		},
 		"summary": {
+			"description": "The main summary of the delegate.",
 			"type": "string",
 			"contentType": "markdown",
 			"tags": [
@@ -74,9 +85,11 @@
 			]
 		},
 		"syntax": {
+			"description": "Example code syntax for the delegate, displayed in a code block in the document.",
 			"type": "string"
 		},
 		"uid": {
+			"description": "The delegate unique identifier.",
 			"contentType": "uid",
 			"type": "string"
 		}

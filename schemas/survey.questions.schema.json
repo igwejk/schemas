@@ -1,0 +1,73 @@
+{
+	"title": "SurveyQuestions",
+	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
+	"version": "1.0.0",
+	"description": "Survey questions schema",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/survey.questions.schema.json",
+	"type": "object",
+	"required": [
+		"questions"
+	],
+	"additionalProperties": false,
+	"properties": {
+		"questions": {
+			"type": "array",
+			"description": "The collection of survey questions for docs",
+			"items": {
+				"required": [
+					"id",
+					"answers"
+				],
+				"additionalProperties": false,
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string",
+						"description": "The question ID",
+						"enum": [
+							"rating-module"
+						]
+					},
+					"answers": {
+						"type": "array",
+						"description": "The answers for the question",
+						"items": {
+							"required": [
+								"id",
+								"title",
+								"scores"
+							],
+							"additionalProperties": false,
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string",
+									"description": "The answer ID"
+								},
+								"title": {
+									"type": "string",
+									"description": "The answer title",
+									"tags": [
+										"localizable"
+									]
+								},
+								"scores": {
+									"type": "array",
+									"description": "The rating scores this answer applies to",
+									"items": {
+										"type": "number"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"metadata": {
+			"type": "object",
+			"properties": {}
+		}
+	},
+	"metadata": "/metadata"
+}

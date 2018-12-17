@@ -3,7 +3,7 @@
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
 	"description": "The schema for sample page",
-	"id": "https://github.com/dotnet/docfx/schemas/sample.schema.json",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/sample.schema.json",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
@@ -23,16 +23,20 @@
 			"type": "object"
 		},
 		"azureDeployPath": {
+			"description": "The deployment id of an Azure Deployment URL (ex. 'Microsoft.FunctionApp', appended to an Azure Portal URL. Used for direct deployment to an Azure instance.",
 			"type": "string"
 		},
 		"author": {
+			"description": "The author of the sample.",
 			"type": "string"
 		},
 		"codeUrl": {
+			"description": "The URL to view the source code text directly.",
 			"type": "string",
 			"contentType": "href"
 		},
 		"description": {
+			"description": "A longer description of the sample with usage information.",
 			"type": "string",
 			"contentType": "markdown",
 			"tags": [
@@ -40,15 +44,18 @@
 			]
 		},
 		"languages": {
+			"description": "A collection of dev languages that apply to this sample?",
 			"items": {
 				"type": "string"
 			},
 			"type": "array"
 		},
 		"name": {
+			"description": "The sample name, used in a level 1 heading.",
 			"type": "string"
 		},
 		"summary": {
+			"description": "A short summary of the sample.",
 			"type": "string",
 			"contentType": "markdown",
 			"tags": [
@@ -56,16 +63,19 @@
 			]
 		},
 		"products": {
+			"description": "A collection of the products for which this sample applies.",
 			"items": {
 				"type": "string"
 			},
 			"type": "array"
 		},
 		"uid": {
+			"description": "The unique identifier for this sample.",
 			"type": "string",
 			"contentType": "uid"
 		},
 		"zipUrl": {
+			"description": "The URL to download a ZIP file of the sample code.",
 			"type": "string",
 			"contentType": "href"
 		}

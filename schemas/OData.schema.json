@@ -3,7 +3,7 @@
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
 	"description": "The schema for OData page",
-	"id": "https://github.com/dotnet/docfx/schemas/OData.schema.json",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/OData.schema.json",
 	"type": "object",
 	"properties": {
 		"actions": {
