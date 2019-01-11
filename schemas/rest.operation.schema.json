@@ -97,6 +97,20 @@
 			},
 			"type": "array"
 		},
+		"errorCodes": {
+			"items": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"code": {
+						"type": "string"
+					}
+				},
+				"type": "object"
+			},
+			"type": "array"
+		},
 		"examples": {
 			"items": {
 				"properties": {

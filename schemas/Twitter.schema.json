@@ -19,21 +19,25 @@
 			"type": "object"
 		},
 		"title": {
+			"description": "The heading level 1 text.",
 			"type": "string",
 			"tags": [
 				"localizable"
 			]
 		},
 		"twitterAttribution": {
+			"description": "The twitter handle (username) for the twitter user.",
 			"type": "string"
 		},
 		"twitterTimeline": {
+			"description": "The twitter-specific information to display the inline twitter timeline.",
 			"type": "object",
 			"additionalProperties": false,
 			"properties": {
 				"href": {
 					"type": "string",
-					"description": "Link href to twitter timeline."
+					"description": "Link href to twitter timeline.",
+					"contentType": "href"
 				},
 				"title": {
 					"type": "string",

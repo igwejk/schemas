@@ -5,17 +5,27 @@
 	"description": "The schema for a profile page.",
 	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/profile.schema.json",
 	"type": "object",
+	"required": [
+		"name"
+	],
 	"properties": {
 		"blog": {
-			"type": "string"
+			"description": "The URL to the profile owner's personal blog.",
+			"type": "string",
+			"contentType": "href"
 		},
 		"facebook": {
-			"type": "string"
+			"description": "The URL to the profile owner's Facebook profile page.",
+			"type": "string",
+			"contentType": "href"
 		},
 		"github": {
-			"type": "string"
+			"description": "The URL to the profile owner's Github account.",
+			"type": "string",
+			"contentType": "href"
 		},
 		"image": {
+			"description": "The user's profile image.",
 			"type": "object",
 			"additionalProperties": false,
 			"properties": {
@@ -24,16 +34,23 @@
 					"type": "string"
 				},
 				"src": {
-					"description": "Image profile.",
+					"description": "Image profile source.",
 					"type": "string"
 				}
-			}
+			},
+			"required": [
+				"src"
+			]
 		},
 		"instagram": {
-			"type": "string"
+			"contentType": "href",
+			"type": "string",
+			"description": "The URL to the profile owner's instagram page."
 		},
 		"linkedin": {
-			"type": "string"
+			"contentType": "href",
+			"type": "string",
+			"description": "The URL to the profile owner's LinkedIn profile."
 		},
 		"location": {
 			"type": "object",
@@ -63,37 +80,45 @@
 			"type": "object"
 		},
 		"name": {
+			"description": "The user's name, used for the level 1 heading.",
 			"type": "string"
 		},
 		"podcast": {
-			"type": "string"
+			"description": "The URL to the user's podcast.",
+			"type": "string",
+			"contentType": "href"
 		},
-		"summary": {
+		"remarks": {
+			"description": "The summary for the user account.",
+			"type": "string",
 			"tags": [
 				"localizable"
 			],
-			"type": "string",
-			"contentType": "markdown"
-		},
-		"remarks": {
-			"type": "string",
 			"contentType": "markdown"
 		},
 		"stackoverflow": {
-			"type": "string"
+			"description": "The user's name, used for the level 1 heading.",
+			"type": "string",
+			"contentType": "href"
 		},
 		"tagline": {
+			"description": "A short tagline for the user profile.",
 			"type": "string"
 		},
 		"twitter": {
-			"type": "string"
+			"description": "The URL for the user's Twitter page.",
+			"type": "string",
+			"contentType": "href"
 		},
 		"uid": {
+			"description": "The unique ID for the user account.",
 			"contentType": "uid",
 			"type": "string"
 		},
 		"website": {
-			"type": "string"
+			"description": "The URL for the user's personal website.",
+			"type": "string",
+			"contentType": "href"
 		}
 	},
 	"metadata": "/metadata"
