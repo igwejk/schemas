@@ -9,7 +9,7 @@
 	"required": [
 		"name",
 		"uid",
-		"author",
+		"authors",
 		"languages",
 		"products"
 	],
@@ -26,9 +26,21 @@
 			"description": "The deployment id of an Azure Deployment URL (ex. 'Microsoft.FunctionApp', appended to an Azure Portal URL. Used for direct deployment to an Azure instance.",
 			"type": "string"
 		},
-		"author": {
-			"description": "The author of the sample.",
-			"type": "string"
+		"authors": {
+			"description": "The authors of the sample.",
+			"type": "array",
+			"required": [
+				"displayName",
+				"id"
+			],
+			"properties": {
+				"displayName": {
+					"type": "string"
+				},
+				"id": {
+					"type": "string"
+				}
+			}
 		},
 		"codeUrl": {
 			"description": "The URL to view the source code text directly.",
