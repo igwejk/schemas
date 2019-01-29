@@ -7,15 +7,16 @@
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
-		"units",
 		"abstract",
+		"badge",
 		"iconUrl",
 		"levels",
 		"products",
 		"roles",
 		"summary",
 		"title",
-		"uid"
+		"uid",
+		"units"
 	],
 	"properties": {
 		"abstract": {
@@ -25,11 +26,6 @@
 			],
 			"type": "string",
 			"contentType": "markdown"
-		},
-		"achievement": {
-			"description": "The reference id for the achievement gained for completing this module.",
-			"type": "string",
-			"contentType": "xref"
 		},
 		"badge": {
 			"required": [
@@ -56,8 +52,8 @@
 			"type": "string",
 			"contentType": "href"
 		},
-		"isRatingEnabled": {
-			"type": "string"
+		"ratingEnabled": {
+			"type": "boolean"
 		},
 		"levels": {
 			"description": "A collection of levels that apply to this module.",
@@ -104,31 +100,48 @@
 			"items": {
 				"type": "string",
 				"enum": [
+					"aspnet",
+					"aspnet-core",
 					"azure",
 					"azure-active-directory",
 					"azure-advisor",
 					"azure-application-insights",
+					"azure-bot-service",
 					"azure-cdn",
 					"azure-clis",
 					"azure-cloud-shell",
+					"azure-cognitive-services",
 					"azure-container-instances",
 					"azure-container-registry",
 					"azure-cosmos-db",
 					"azure-cost-management",
+					"azure-data-catalog",
+					"azure-data-science-vm",
+					"azure-databricks",
+					"azure-digital-twins",
 					"azure-event-grid",
 					"azure-event-hubs",
 					"azure-functions",
+					"azure-hdinsight",
 					"azure-iot-central",
+					"azure-iot-edge",
+					"azure-iot-hub",
 					"azure-key-vault",
+					"azure-language-understanding",
+					"azure-machine-learning-service",
+					"azure-machine-learning-studio",
 					"azure-log-analytics",
+					"azure-maps",
 					"azure-monitor",
 					"azure-portal",
 					"azure-redis-cache",
 					"azure-resource-manager",
 					"azure-sdks",
 					"azure-service-bus",
+					"azure-sql-data-warehouse",
 					"azure-sql-database",
 					"azure-storage",
+					"azure-stream-analytics",
 					"azure-virtual-machines",
 					"bizapps",
 					"bizapps-d365",
@@ -136,6 +149,8 @@
 					"bizapps-power-apps",
 					"bizapps-power-bi",
 					"common-data-service",
+					"dotnet",
+					"dotnet-core",
 					"dynamics",
 					"dynamics-ai-customer-service",
 					"dynamics-ai-market-insights",
@@ -154,12 +169,41 @@
 					"dynamics-sales",
 					"dynamics-talent",
 					"flow",
+					"m365",
+					"office",
+					"office-365",
+					"office-access",
+					"office-add-ins",
+					"office-adaptive-cards",
+					"office-excel",
+					"office-kaizala",
+					"office-ms-graph",
+					"office-onedrive",
+					"office-onenote",
+					"office-outlook",
+					"office-planner",
+					"office-powerpoint",
+					"office-project",
+					"office-publisher",
+					"office-skype-business",
+					"office-sp",
+					"office-sp-framework",
+					"office-teams",
+					"office-ui-fabric",
+					"office-visio",
+					"office-word",
+					"office-yammer",
 					"power-bi",
 					"power-platform",
 					"powerapps",
+					"skype",
+					"sql-server",
 					"vs",
 					"vs-code",
-					"windows"
+					"windows",
+					"windows-uwp",
+					"windows-wpf",
+					"xamarin"
 				]
 			}
 		},

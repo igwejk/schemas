@@ -273,7 +273,11 @@
 						}
 					},
 					"action": {
+						"additionalProperties": false,
 						"type": "object",
+						"required": [
+							"inputType"
+						],
 						"properties": {
 							"inputType": {
 								"type": "string",
@@ -283,6 +287,11 @@
 								]
 							},
 							"link": {
+								"additionalProperties": false,
+								"required": [
+									"text",
+									"href"
+								],
 								"type": "object",
 								"properties": {
 									"text": {
@@ -297,7 +306,12 @@
 								}
 							},
 							"select": {
+								"additionalProperties": false,
 								"type": "array",
+								"required": [
+									"text",
+									"href"
+								],
 								"items": {
 									"type": "object",
 									"properties": {
@@ -485,135 +499,16 @@
 	},
 	"definitions": {
 		"path": {
-			"type": "object",
-			"properties": {
-				"title": {
-					"type": "string",
-					"tags": [
-						"localizable"
-					]
-				},
-				"summary": {
-					"type": "string",
-					"tags": [
-						"localizable"
-					]
-				},
-				"uid": {
-					"type": "string",
-					"contentType": "uid"
-				},
-				"image": {
-					"type": "object",
-					"additionalProperties": false,
-					"required": [
-						"alt",
-						"src"
-					],
-					"properties": {
-						"alt": {
-							"type": "string",
-							"tags": [
-								"localizable"
-							]
-						},
-						"src": {
-							"type": "string"
-						}
-					}
-				},
-				"url": {
-					"type": "string"
-				},
-				"level": {
-					"type": "string",
-					"tags": [
-						"localizable"
-					]
-				},
-				"role": {
-					"type": "string",
-					"tags": [
-						"localizable"
-					]
-				},
-				"product": {
-					"type": "string",
-					"tags": [
-						"localizable"
-					]
-				},
-				"hours": {
-					"type": "number"
-				},
-				"minutes": {
-					"type": "number"
-				},
-				"numberOfModules": {
-					"type": "number"
-				}
-			}
+			"additionalProperties": false,
+			"description": "The UID xref of a learning path in Microsoft Learn.",
+			"type": "string",
+			"contentType": "xref"
 		},
 		"module": {
-			"type": "object",
-			"properties": {
-				"title": {
-					"type": "string",
-					"tags": [
-						"localizable"
-					]
-				},
-				"summary": {
-					"type": "string",
-					"tags": [
-						"localizable"
-					]
-				},
-				"uid": {
-					"type": "string",
-					"contentType": "uid"
-				},
-				"image": {
-					"type": "object",
-					"required": [
-						"alt",
-						"src"
-					],
-					"additionalProperties": false,
-					"properties": {
-						"alt": {
-							"type": "string",
-							"tags": [
-								"localizable"
-							]
-						},
-						"src": {
-							"type": "string"
-						}
-					}
-				},
-				"numberOfUnits": {
-					"type": "number"
-				},
-				"level": {
-					"type": "string",
-					"tags": [
-						"localizable"
-					]
-				},
-				"role": {
-					"type": "string",
-					"tags": [
-						"localizable"
-					]
-				},
-				"product": {
-					"type": "string",
-					"tags": [
-						"localizable"
-					]
-				}
-			}
+			"additionalProperties": false,
+			"description": "The UID xref of a module in Microsoft Learn.",
+			"type": "string",
+			"contentType": "xref"
 		}
 	},
 	"metadata": "/metadata"

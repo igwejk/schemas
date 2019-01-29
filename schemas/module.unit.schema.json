@@ -121,20 +121,6 @@
 												"localizable"
 											]
 										},
-										"correctExplanation": {
-											"type": "string",
-											"contentType": "markdown",
-											"tags": [
-												"localizable"
-											]
-										},
-										"incorrectExplanation": {
-											"type": "string",
-											"contentType": "markdown",
-											"tags": [
-												"localizable"
-											]
-										},
 										"explanation": {
 											"type": "string",
 											"contentType": "markdown",
