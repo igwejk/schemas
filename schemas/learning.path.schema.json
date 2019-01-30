@@ -14,10 +14,14 @@
 		"roles",
 		"summary",
 		"title",
-		"trophy",
 		"uid"
 	],
 	"properties": {
+		"achievement": {
+			"description": "The achievement reference id.",
+			"type": "string",
+			"contentType": "xref"
+		},
 		"cardDescription": {
 			"description": "The Learning Path summary, displayed in the content browser and in other areas where cards are used, like the Learn homepage.",
 			"tags": [
@@ -199,9 +203,12 @@
 			"items": {
 				"type": "string",
 				"enum": [
+					"ai-engineer",
 					"administrator",
 					"business-analyst",
 					"business-user",
+					"data-engineer",
+					"data-scientist",
 					"developer",
 					"functional-consultant",
 					"solution-architect"

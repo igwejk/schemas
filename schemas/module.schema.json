@@ -7,16 +7,15 @@
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
+		"units",
 		"abstract",
-		"badge",
 		"iconUrl",
 		"levels",
 		"products",
 		"roles",
 		"summary",
 		"title",
-		"uid",
-		"units"
+		"uid"
 	],
 	"properties": {
 		"abstract": {
@@ -26,6 +25,11 @@
 			],
 			"type": "string",
 			"contentType": "markdown"
+		},
+		"achievement": {
+			"description": "The reference id for the achievement gained for completing this module.",
+			"type": "string",
+			"contentType": "xref"
 		},
 		"badge": {
 			"required": [
@@ -214,9 +218,12 @@
 			"items": {
 				"type": "string",
 				"enum": [
+					"ai-engineer",
 					"administrator",
 					"business-analyst",
 					"business-user",
+					"data-engineer",
+					"data-scientist",
 					"developer",
 					"functional-consultant",
 					"solution-architect"
