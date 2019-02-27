@@ -1,9 +1,9 @@
 {
-	"title": "Hub",
+	"title": "HubDeprecated",
 	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
 	"version": "1.0.0",
 	"description": "The schema for Hub",
-	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/Hub.schema.json",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/HubDeprecated.schema.json",
 	"type": "object",
 	"additionalProperties": false,
 	"required": [
