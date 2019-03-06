@@ -8,9 +8,18 @@
 	"additionalProperties": false,
 	"required": [
 		"summary",
-		"title"
+		"title",
+		"browseType"
 	],
 	"properties": {
+		"browseType": {
+			"type": "string",
+			"enum": [
+				"learn",
+				"samples"
+			],
+			"description": "The property that determines which content browser api the page will use. Currently only 'Learn' is available in production."
+		},
 		"filterText": {
 			"type": "string",
 			"tags": [
