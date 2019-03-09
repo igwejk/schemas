@@ -1,0 +1,43 @@
+{
+	"title": "ModuleAvailability",
+	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
+	"version": "1.0.0",
+	"description": "Config file to set module sandbox and lab availability statuses",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/ModuleAvailability.schema.json",
+	"type": "object",
+	"required": [
+		"disableAllSandboxes",
+		"disableAllLabs"
+	],
+	"additionalProperties": false,
+	"properties": {
+		"disableAllLabs": {
+			"description": "Flag to set all module labs unavailable",
+			"type": "boolean"
+		},
+		"disableAllSandboxes": {
+			"description": "Flag to set all module sandboxes unavailable",
+			"type": "boolean"
+		},
+		"disabledLabs": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/module"
+			}
+		},
+		"disabledModules": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/module"
+			}
+		}
+	},
+	"definitions": {
+		"module": {
+			"additionalProperties": false,
+			"description": "The unique identifier for the module to be marked as unavailable.",
+			"type": "string",
+			"contentType": "xref"
+		}
+	}
+}
