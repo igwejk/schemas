@@ -25,7 +25,7 @@
 				"$ref": "#/definitions/module"
 			}
 		},
-		"disabledModules": {
+		"disabledSandboxes": {
 			"type": "array",
 			"items": {
 				"$ref": "#/definitions/module"
