@@ -1,0 +1,377 @@
+{
+	"title": "Hub",
+	"$schema": "https://dotnet.github.io/docfx/schemas/v1.0/schema.json#",
+	"version": "1.0.0",
+	"description": "The schema for the New Hub Pages",
+	"id": "https://github.com/MicrosoftDocs/schemas/blob/master/schemas/hub.schema.json",
+	"type": "object",
+	"additionalProperties": false,
+	"required": [
+		"title"
+	],
+	"properties": {
+		"brand": {
+			"description": "Brand used to control brand colors in the hero area",
+			"type": "string",
+			"additionalProperties": false,
+			"enum": [
+				"azure",
+				"sql-server",
+				"vs"
+			]
+		},
+		"summary": {
+			"description": "The summary of the page, used in the hero",
+			"type": "string",
+			"tags": [
+				"localizable"
+			]
+		},
+		"title": {
+			"description": "The title of the page, used in the hero",
+			"type": "string",
+			"tags": [
+				"localizable"
+			]
+		},
+		"metadata": {
+			"type": "object",
+			"properties": {
+				"description": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"title": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				}
+			}
+		},
+		"highlightedContent": {
+			"description": "The highlighted content section holds several simple cards, each card points to a single piece of content.",
+			"type": "object",
+			"required": [
+				"items"
+			],
+			"properties": {
+				"items": {
+					"type": "array",
+					"required": [
+						"itemType",
+						"title",
+						"url"
+					],
+					"properties": {
+						"itemType": {
+							"description": "The itemtype is used to populate the super title and the accompanying icon used on the card",
+							"type": "string",
+							"additionalProperties": false,
+							"enum": [
+								"overview",
+								"quickstart",
+								"tutorial",
+								"sample",
+								"concepts",
+								"guide",
+								"reference",
+								"troubleshooting",
+								"blog",
+								"whats-new",
+								"video",
+								"reference-architecture",
+								"example",
+								"checklist",
+								"design-pattern",
+								"design-guide"
+							]
+						},
+						"title": {
+							"type": "string",
+							"tags": [
+								"localizable"
+							]
+						},
+						"url": {
+							"type": "string",
+							"contentType": "href"
+						}
+					}
+				}
+			}
+		},
+		"productDirectory": {
+			"description": "The product directory can have a section title and summary, it contains several cards, each one points to a product page.",
+			"type": "object",
+			"required": [
+				"items"
+			],
+			"properties": {
+				"summary": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"title": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"items": {
+					"type": "array",
+					"required": [
+						"image",
+						"title",
+						"summary",
+						"url"
+					],
+					"properties": {
+						"image": {
+							"type": "object",
+							"additionalProperties": false,
+							"required": [
+								"src"
+							],
+							"properties": {
+								"src": {
+									"type": "string"
+								}
+							}
+						},
+						"title": {
+							"type": "string",
+							"tags": [
+								"localizable"
+							]
+						},
+						"summary": {
+							"type": "string",
+							"tags": [
+								"localizable"
+							]
+						},
+						"url": {
+							"type": "string",
+							"contentType": "href"
+						}
+					}
+				}
+			}
+		},
+		"conceptualContent": {
+			"description": "The conceptual content section can have a section title and section summary as well as several cards. The cards must have a title and contain at least one link.",
+			"type": "object",
+			"required": [
+				"items"
+			],
+			"properties": {
+				"summary": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"title": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"items": {
+					"type": "array",
+					"required": [
+						"links"
+					],
+					"properties": {
+						"footerLink": {
+							"description": "The footer link is the final link at the end of the links list, it always has a right caret at the end of it's text",
+							"type": "array",
+							"required": [
+								"text",
+								"url"
+							],
+							"properties": {
+								"text": {
+									"type": "string",
+									"tags": [
+										"localizable"
+									]
+								},
+								"url": {
+									"type": "string"
+								}
+							}
+						},
+						"links": {
+							"type": "array",
+							"required": [
+								"itemType",
+								"text",
+								"url"
+							],
+							"properties": {
+								"itemType": {
+									"description": "The item type should match the type of the url. It will decide what glyph image used in front of the link text.",
+									"type": "string",
+									"additionalProperties": false,
+									"enum": [
+										"overview",
+										"quickstart",
+										"tutorial",
+										"sample",
+										"concepts",
+										"guide",
+										"reference",
+										"troubleshooting",
+										"blog",
+										"whats-new",
+										"video",
+										"reference-architecture",
+										"example",
+										"checklist",
+										"design-pattern",
+										"design-guide"
+									]
+								},
+								"text": {
+									"type": "string",
+									"tags": [
+										"localizable"
+									]
+								},
+								"url": {
+									"type": "string"
+								}
+							}
+						},
+						"summary": {
+							"type": "string",
+							"tags": [
+								"localizable"
+							]
+						},
+						"title": {
+							"type": "string",
+							"tags": [
+								"localizable"
+							]
+						}
+					}
+				}
+			}
+		},
+		"tools": {
+			"description": "The tools section may have a section title and a section summary, the section must consist of several cards. Each card is meant to point to a Language, Framework, CLI, Tool or Extension.",
+			"type": "object",
+			"required": [
+				"items"
+			],
+			"properties": {
+				"summary": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"title": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"items": {
+					"type": "array",
+					"required": [
+						"image",
+						"title",
+						"url"
+					],
+					"properties": {
+						"image": {
+							"type": "object",
+							"additionalProperties": false,
+							"required": [
+								"src"
+							],
+							"properties": {
+								"src": {
+									"type": "string"
+								}
+							}
+						},
+						"title": {
+							"type": "string",
+							"tags": [
+								"localizable"
+							]
+						},
+						"url": {
+							"type": "string",
+							"contentType": "href"
+						}
+					}
+				}
+			}
+		},
+		"additionalContent": {
+			"description": "The additional content section is the most flexible section. It allows for a section title, section summary, several cards, and a footer section.",
+			"type": "object",
+			"required": [
+				"items"
+			],
+			"properties": {
+				"summary": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"title": {
+					"type": "string",
+					"tags": [
+						"localizable"
+					]
+				},
+				"footer": {
+					"description": "The footer is a catch all for final content that can be included at the bottom of the page.",
+					"type": "string",
+					"contentType": "markdown",
+					"tags": [
+						"localizable"
+					]
+				},
+				"items": {
+					"type": "array",
+					"required": [
+						"summary",
+						"title"
+					],
+					"properties": {
+						"summary": {
+							"type": "string",
+							"contentType": "markdown",
+							"tags": [
+								"localizable"
+							]
+						},
+						"title": {
+							"type": "string",
+							"tags": [
+								"localizable"
+							]
+						},
+						"url": {
+							"type": "string",
+							"contentType": "href"
+						}
+					}
+				}
+			}
+		}
+	}
+}
